@@ -1,0 +1,35 @@
+import numpy as np
+
+
+array_sonlar=np.array([12,34,23,4,6,7])
+array_sonlar2=np.array([[12,34,27],[12,34,56]])
+
+yig_array=np.sum(array_sonlar)
+ortacha_array=np.mean(array_sonlar)
+kopaytma_array=np.prod(array_sonlar)
+
+print("sonlar: ",array_sonlar)
+print("sonlar2: ",array_sonlar2)
+print("Yig'indisi: ",yig_array)
+print("O'rtachasi: ",ortacha_array)
+print("Ko'paytmasi: ",kopaytma_array)
+
+import pandas as pd
+
+data ={
+    'Ism':['Muhammad','Abbos','Komron','Sardor','Kozim','Farhod','Laziz','Azam','Qosim','Akmal'],
+    'Yoshi':[18,19,23,17,21,19,20,34,12,25],
+    'Shahar':['Qashqadaryo','Andijon','Fargona','Qashqadaryo','Samarqand','Qashqadaryo','Fargona','Namangan','Andijon','Qashqadaryo']
+ }
+df = pd.DataFrame(data)
+
+print(df)
+
+young_people = df[df['Yoshi'] < 20]
+print("20 yoshdan kichik talabalar:\n", young_people)
+
+df['Yoshi'] += 1
+print("Yangilangan DataFrame:\n", df)
+
+shahar_t = df[df['Shahar'] == 'Qashqadaryo']
+print("Quvalik talabalar:\n",shahar_t)
